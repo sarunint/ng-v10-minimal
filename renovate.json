@@ -1,0 +1,18 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "packageNames": [
+        "@angular/core",
+        "@angular/cli"
+      ],
+      "postUpgradeTasks": {
+        "commands": [
+          "npm ci --ignore-scripts",
+          "npx ng update {{{depName}}} --from={{{fromVersion}}} --to={{{toVersion}}} --migrateOnly --allowDirty --force"
+        ],
+        "fileFilters": ["**/**"]
+      }
+    }
+  ]
+}
