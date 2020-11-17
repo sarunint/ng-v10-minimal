@@ -1,5 +1,7 @@
 {
-  "extends": ["config:base"],
+  "extends": [
+    "config:base"
+  ],
   "packageRules": [
     {
       "packageNames": [
@@ -11,8 +13,19 @@
           "npm ci --ignore-scripts",
           "npx ng update {{{depName}}} --from={{{fromVersion}}} --to={{{toVersion}}} --migrateOnly --allowDirty --force"
         ],
-        "fileFilters": ["**/**"]
+        "fileFilters": [
+          "**/**"
+        ]
       }
+    },
+    {
+      "extends": [
+        "monorepo:angularcli",
+        "monorepo:angular"
+      ],
+      "allowedVersions": "< 12.0.0",
+      "separateMajorMinor": false,
+      "groupName": "Angular and Angular CLI packages"
     }
   ]
 }
