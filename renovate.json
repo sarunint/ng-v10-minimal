@@ -16,7 +16,8 @@
         "fileFilters": [
           "**/**"
         ]
-      }
+      },
+      "updateTypes": ["major", "minor", "patch"]
     },
     {
       "extends": [
